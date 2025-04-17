@@ -27,6 +27,12 @@
         - SCALE Manual Method `kubectl scale deploy nginx-deployment --replicas 5`
         - SCALE Manual Method `kubectl scale deploy nginx-deployment --replicas 2`
         - SCALE Manual Method `kubectl scale deploy nginx-deployment --replicas 0` // 0 cost
+        - Daemon Sets - Used to launch common containers for all nodes example log aggregation
+            - `DaemonSet` a kind
+            - it is same as deployment but there is no concept of replicas since it will be equal to the number of nodes
+            - `kubectl get ds`
+            - `kubectl get ds -n kube-system`
+            - k8s means k 8 letter between k and s
 
 
 
