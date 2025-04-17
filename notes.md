@@ -32,4 +32,14 @@
 - `kublet` is also running on Master node and which is managing the control plane pods (static pods)
 - Add cpu and memory for containers
 - If don't set to limit to the resources, then it should affect the performance of the machine is running on containers.
+
+## TO:DO Lab Practice - Google Doc is 'Workload'
+
+
+## Kubernetes Dashboard
+
+- ref link : https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+- kubectl get all -n kubernetes-dashboard
+
+
  
