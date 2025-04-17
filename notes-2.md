@@ -33,6 +33,9 @@
             - `kubectl get ds`
             - `kubectl get ds -n kube-system`
             - k8s means k 8 letter between k and s
+### Configuration
+            
+
 
 
 
