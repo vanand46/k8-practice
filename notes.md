@@ -13,5 +13,17 @@
 - `$ k8 label node <node-name> disktype=ssd` 
 - `$ k8 explain pod.spec.nodeSelector` to select node based on the nodeSelector configuration.
 - Challenge is to manage the node is there or not, need to manage duplicate resource names etc..
-- If there is issue, then STATUS of the pod is in Pending.
-
+- If there is an issue, then STATUS of the pod is in Pending state.
+- Affinity
+    - It is the condition to find the node.
+    - If the condition is met, then pod is getting created.If not met, it will not create the pod.
+    - `$ k8 explain pod.spec.affinity`
+    - Node Affinity(nodeAffinity)
+        - requiredCondition (nodeSelector)
+        - prefferedCondition (nodeSelector, weight)
+    - POD Affinity(podAffinity)
+        - Used when one container is depends on or share by multiple containers.
+        - To be in same node
+- Anti-Affinity
+    - If the condition is met, then pod is not getting created.
+    - No identical pod on the same node
