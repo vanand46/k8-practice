@@ -1,5 +1,4 @@
 # April 13, 2025
-
 ## Networking
 ### Network Types
 - Management/Cluster Network (Control Plane & Worker Node) - 172.31(here only)
@@ -48,3 +47,18 @@ Based on the traffic, we decide the service type.
     - Internal Load Balancer
     - Internal Traffic
     - Redis, DB, Kafka are the some of the examples
+
+## DNS
+- Resource Name to IP mapping.
+- `$ k8 get deploy -n kube-system` // we can see core dns in the output list of the command
+- `$ k8 get svc -n kube-system`
+There will be kube-dns service of the type ClusterIP in the system
+
+### Types of communications
+- Pod to service in same name space
+- Pod to service in different name space (not a good practice)
+- Pod to Pod communication
+- Pod to Pod communication in different name space
+
+## 
+
