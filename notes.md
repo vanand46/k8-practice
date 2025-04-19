@@ -60,5 +60,20 @@ There will be kube-dns service of the type ClusterIP in the system
 - Pod to Pod communication
 - Pod to Pod communication in different name space
 
-## 
+## Ingress Controllers
+- Accept traffic from outside the k8s platform , and load balance it to the pods running inside the platform.
+- Configured using the k8s API to deploy objects called Ingress Resources
+- Monitor the pods running in k8s and automatically update the load-balancing rules when pods are added or removed from a service
 
+Ingress -> Incoming
+Egress -> Outgoing
+
+- Nginx
+- Traefik
+- Istio
+ ### Steps
+ - Install the ingress controller
+ - Create deployments and services
+ - Routing Configurations
+ ### Annotations
+ Similiar to label but used by some other tools.
