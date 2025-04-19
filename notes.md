@@ -24,4 +24,27 @@ User -> Load Balancer(Service (svc)) -> Deployment (Pod1, Pod3)
 
 The direct communication between pods are not recommended.It has usually done with services.
 
-- Pod labels and selectors are used by services to identify the pods
+- Pod labels and selectors are used by services to identify the pods.
+- Service Port
+- Target Port
+- Container Port
+- Service Port -> Target Port -> Container Port
+- Target Port === Container Port
+- kube-proxy managing services which is a configuration.
+- `$ k8 get ep <service-name>` // The Entrance Point
+
+### Service Types
+Based on the traffic, we decide the service type.
+- LoadBalancer
+    - Internet Traffic
+    - amazon, facebook are some of the examples.
+- NodePort
+    - External Load Balancer
+    - External Traffic within Organisation
+    - Intranet, JIRA(Agile Framework), Jenkins, Git are the some of the examples
+    - Port Range [30000 - 32767] - 2767
+- ClusterIP 
+    - Default service Type
+    - Internal Load Balancer
+    - Internal Traffic
+    - Redis, DB, Kafka are the some of the examples
