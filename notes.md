@@ -27,7 +27,10 @@
 - They will handle the jobs like Applications onboarding to the cluster
 
 ## Cluster Administrators
-- Cluster Role : Resources + Permissions
+- Cluster Role : Resources + Verbs
 - Cluster Role Binding : Cluster Role + User/Group/SA
+- Cluster Roles are not tied with namespaces
+- `kubectl get clusterrole`
 
-Cluster Roles are not tied with namespaces
+## Resource Quota
+Setting limits for the resources under the clustter.
