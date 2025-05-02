@@ -30,6 +30,47 @@ Then use the following address in Firefox
 On the Kubernetes Dashboard,
 Select Token from the given options and enter the token
 
+In Master node
+- `$ vi ServiceAccount.yaml`
+- Copy and paste the following content inside the file and save it
+```YAML
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+```
+- `$ kubectl apply -f ServiceAccount.yaml`
+- `$ vi ClusterRoleBinding.yaml`
+- Copy and paste the following content inside the file and save it
+```YAML
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kubernetes-dashboard
+```
+- `$ kubectl apply -f ClusterRoleBinding.yaml`
+- Now we need to find the token we can use to log in. Execute the following command
+- `$ kubectl -n kubernetes-dashboard create token admin-user`
+- Copy the token and paste it in Kubernetes Dashboard in Browser.
+## [OPTIONAL] Cleanup:
+kubectl delete -f  https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
+## Reference:
+https://v1-28.docs.kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+
+
+
+
   
   
   
